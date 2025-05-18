@@ -1,0 +1,31 @@
+{
+  "name": "gr1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doquanghuy20225854/GR1.git"
+  },
+  "keywords": [
+    "gr1",
+    "nodejs",
+    "backend"
+  ],
+  "author": "huydq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doquanghuy20225854/GR1/issues"
+  },
+  "homepage": "https://github.com/doquanghuy20225854/GR1#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
