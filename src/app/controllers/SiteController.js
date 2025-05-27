@@ -1,12 +1,24 @@
+const Course = require('../controllers/models/Course');
+const {mutipleMongooseToOject} = require('../../util/mongoose')
+
 class SiteController {
-    // GET/Home
-    home(req, res) {
-        res.render('home');
-    }
-    //GET/search
+    // GET /search
     search(req, res) {
         res.render('search');
     }
+    // GET /home
+    async home(req, res) {
+        try {
+            const courses = await Course.find({});
+            res.render('home', {
+                                courses: mutipleMongooseToOject(courses)
+                                });
+        } catch (err) {
+            res.status(400).json({ error: 'Error fetching courses' });
+        }
+    }
+
+    
 }
 
 module.exports = new SiteController();
