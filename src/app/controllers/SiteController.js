@@ -1,4 +1,4 @@
-const Course = require('../controllers/models/Course');
+const Course = require('../models/DatLich');
 const {mutipleMongooseToOject} = require('../../util/mongoose')
 
 class SiteController {

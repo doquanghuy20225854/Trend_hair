@@ -1,18 +1,18 @@
-const Course = require('./models/Course');
+const Dat_lich = require('../models/DatLich');
 const {mongooseToObject} = require('../../util/mongoose')
 
-class CourseController {
+class DatLichController {
     //GET course: slug
     show(req, res, next) {
         Course.findOne({slug:req.params.slug})
         .then((course)=>{
-            res.render('courses/show', {course: mongooseToObject(course)});
+            res.render('dat_lich/show', {course: mongooseToObject(course)});
         })
         .catch(next);
     }
-    //GET courses/create
+    //GET dat_lich/create
     create(req, res, next) {
-        res.render('courses/create')
+        res.render('dat_lich/create')
     }
     //post courses/store
     // POST courses/store
@@ -31,4 +31,4 @@ class CourseController {
 
 }
 
-module.exports = new CourseController();
+module.exports = new DatLichController();

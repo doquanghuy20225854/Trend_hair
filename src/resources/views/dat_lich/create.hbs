@@ -1,0 +1,28 @@
+<div class="mt-4">
+    <h3>Đặt lịch hẹn </h3>
+        <form method="post" action="/dat_lich/store">
+            <div class="mb-3">
+                <label for="name" >Chọn dịch vụ</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+
+            <div class="mb-3">
+                <label for="description" >Thời gian hẹn</label>
+                <input type="text" class="form-control" id="description" name="description">
+            </div>
+           <div class="mb-3">
+                <label for="barber">Chọn thợ cắt</label>
+                <select class="form-control" id="barber" name="barber">
+                    <option value="">-- Chọn thợ cắt --</option>
+                    <option value="nam">Nam</option>
+                    <option value="huy">Huy</option>
+                    <option value="linh">Linh</option>
+                    <option value="tuan">Tuấn</option>
+                </select>
+            </div>
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Đặt lịch</button>
+            </div>
+       </form> 
+</div>

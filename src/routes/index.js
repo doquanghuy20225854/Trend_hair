@@ -1,10 +1,10 @@
 const newsRouters = require('./news');
 const siteRouters = require('./Site');
-const courseRouters = require('./courses');
+const datLichRouters = require('./dat_lich');
 
 function router(app) {
 app.use('/news', newsRouters);
-app.use('/courses', courseRouters);
+app.use('/dat_lich', datLichRouters);
 app.use('/', siteRouters);
 }
 
