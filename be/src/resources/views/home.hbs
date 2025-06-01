@@ -1,0 +1,41 @@
+<div class="mt-4">
+    <div class="container styled-container mt-4">
+    <h1 class="box-title text-center">Giới thiệu về Trend Hair</h1>
+    
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+        <!-- Video bên trái -->
+        <div class="col-lg-6 col-12 mb-3">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VNSsHSbBQdA?si=yNdgHPGWCzv1OZIi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Đoạn giới thiệu bên phải -->
+        <div class="col-lg-6 col-12">
+            <p class="text-end">
+                Chào mừng đến với tiệm tóc Tuan Truyen – nơi mỗi mái tóc không chỉ được cắt tỉa, mà còn được thổi hồn bằng sự tỉ mỉ, đam mê và phong cách riêng biệt!  
+                <br><br>
+                Tại đây, từng đường kéo, từng lọn tóc đều được chăm chút như một tác phẩm nghệ thuật.  
+                <br><br>
+                Dù bạn theo đuổi phong cách lịch lãm, cá tính nổi bật hay đơn giản là sự gọn gàng tinh tế, Tuan Truyen luôn biết cách làm bạn tỏa sáng theo cách riêng của mình.  
+                <br><br>
+                Hãy để mái tóc của bạn kể câu chuyện bạn muốn – và chúng tôi sẽ là người giúp bạn viết nên câu chuyện ấy!
+            </p>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <h2 class="box-title text-center">
+            Combo Quý Ông
+        </h2>
+        <div class="d-flex flex-wrap gap-3 ">
+            {{#each comBos}}
+            <div class="card card-course-item" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <img src="{{this.img}}" alt="Combo ảnh" class="img-fluid">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

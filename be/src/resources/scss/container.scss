@@ -1,0 +1,25 @@
+
+.container {
+  background-color: #cbdb91; // Nền hơi ngà, tránh trắng toát
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); // Đổ bóng nhẹ
+  transition: all 0.3s ease-in-out;
+
+  // Cho cảm giác nổi bật khi hover
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  h1, h2, h3, h4 {
+    color: #2c3e50; // Màu đậm, sang
+    font-weight: 700;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.05rem;
+  }
+}

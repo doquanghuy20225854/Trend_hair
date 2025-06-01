@@ -3,5 +3,6 @@ const router = express.Router();
 const datLichController = require('../app/controllers/DatLichController');
 router.post('/store', datLichController.store);
 router.get('/create', datLichController.create);
-router.get('/:slug', datLichController.show);
+// routes/dat_lich.js
+router.get('/:id', datLichController.show);
 module.exports = router;
