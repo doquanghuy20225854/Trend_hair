@@ -1,0 +1,41 @@
+<div class="mt-4 booking-form">
+  <h3>Đặt lịch hẹn </h3>
+  <form method="post" action="/dat_lich/{{datLich._id}}?_method=PUT"> 
+    <!-- Dịch vụ -->
+    <div class="mb-3">
+      <label for="tenDichVu">Chọn dịch vụ</label>
+      <input type="text" class="form-control" value="{{datLich.tenDichVu}}" id="tenDichVu" name="tenDichVu">
+    </div>
+
+    <!-- Thời gian -->
+    <div class="mb-3">
+      <label for="thoiGianHen">Thời gian hẹn</label>
+      <input type="text" class="form-control" value="{{datLich.thoiGianHen}}" id="thoiGianHen" name="thoiGianHen">
+    </div>
+
+    <!-- Thợ cắt -->
+    <div class="mb-3">
+      <label for="thoCat">Chọn thợ cắt</label>
+      <select class="form-control" id="thoCat" name="thoCat">
+        <option value="">-- Chọn thợ cắt --</option>
+        <option value="Nam" {{#if (eq datLich.thoCat "Nam")}}selected{{/if}}>Nam</option>
+        <option value="Huy" {{#if (eq datLich.thoCat "Huy")}}selected{{/if}}>Huy</option>
+        <option value="Linh" {{#if (eq datLich.thoCat "Linh")}}selected{{/if}}>Linh</option>
+        <option value="Tuấn" {{#if (eq datLich.thoCat "Tuấn")}}selected{{/if}}>Tuấn</option>
+      </select>
+
+    </div>
+
+    <!-- Ghi chú -->
+    <div class="mb-3">
+      <label for="ghiChu">Ghi chú</label>
+      <input type="text" class="form-control" value="{{datLich.ghiChu}}" id="ghiChu" name="ghiChu">
+    </div>
+
+    <!-- Submit -->
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Lưu lại</button>
+    </div>
+
+  </form>
+</div>

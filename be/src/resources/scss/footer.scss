@@ -1,0 +1,26 @@
+.footer-wrapper {
+  background-color: #929fba;
+
+  footer {
+    color: #fff;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .btn-floating {
+      border-radius: 50%;
+    }
+
+    .copyright {
+      background-color: rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 1rem;
+    }
+  }
+}

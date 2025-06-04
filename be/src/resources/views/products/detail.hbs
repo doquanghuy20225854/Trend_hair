@@ -1,0 +1,40 @@
+<div class="mt-4">
+  <div class="row">
+    <!-- Hình ảnh -->
+    <div class="col-lg-6">
+      <img src="{{product.img}}" alt="{{product.name}}" class="img-fluid">
+    </div>
+
+    <!-- Thông tin chi tiết -->
+    <div class="col-lg-6">
+      <p>Dưỡng và bảo vệ tóc khi sấy, tạo nếp. Giúp tóc phồng lên ngay tức khắc.</p>
+      <ul>
+        <li><strong>Thương hiệu:</strong> <span style="color: #e67e22;">{{product.brand}}</span></li>
+        <li><strong>Xuất xứ:</strong> {{product.origin}}</li>
+        <li><strong>Dung tích:</strong> 100ml</li> <!-- Dung tích vẫn cố định -->
+      </ul>
+
+      <p><strong>Tình trạng:</strong> <span style="color: green;">In stock</span></p>
+
+      <!-- Giá sản phẩm -->
+      <h3 style="font-weight: bold;">{{product.price}} đ</h3>
+
+      <!-- Số lượng và nút -->
+      <div class="d-flex align-items-center mb-3">
+        <div class="input-group me-3" style="width: 130px;">
+          <button class="btn btn-outline-secondary" type="button">−</button>
+          <input type="text" class="form-control text-center" value="1">
+          <button class="btn btn-outline-secondary" type="button">+</button>
+        </div>
+
+        <button class="btn btn-danger me-2">THÊM VÀO GIỎ HÀNG</button>
+        <button class="btn btn-outline-secondary"><i class="bi bi-heart"></i></button>
+      </div>
+
+      <!-- Mã SP và thông tin khác -->
+      <p><strong>Mã sản phẩm:</strong> 664759</p>
+      <p><strong>Danh mục:</strong> Dưỡng tóc</p>
+      <p><strong>Nhóm hàng:</strong> Dưỡng bóng tóc, Dưỡng tóc Mỹ, Dưỡng tóc Reuzel, Xịt dưỡng tóc</p>
+    </div>
+  </div>
+</div>

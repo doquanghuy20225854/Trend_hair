@@ -1,6 +1,8 @@
 @use 'variables' as *;
 @use 'container';
 @use 'style-container';
+@use './footer';
+@use 'booking';
 .navbar {
   background: #fff;
   border-bottom: 2px solid #eee;

@@ -1,0 +1,34 @@
+<div class="mt-4">
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên dịch vụ</th>
+        <th scope="col">Thời gian hẹn</th>
+        <th scope="col">Tên thợ</th>
+        <th scope="col">Ghi chú</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each Me}}
+        <tr>
+          <th scope="row">{{inc @index}}</th>
+          <td>{{this.tenDichVu}}</td>
+          <td>{{this.thoiGianHen}}</td>
+          <td>{{this.thoCat}}</td>
+          <td>{{this.ghiChu}}</td>
+           <td>
+              <a href="/dat_lich/{{this._id}}/edit" class="btn btn-info btn-sm me-1">Sửa</a>
+
+              <form method="POST" action="/dat_lich/{{this._id}}/delete?_method=DELETE" style="display:inline;">
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xoá không?')">
+                  Xóa
+                </button>
+              </form>
+            </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
