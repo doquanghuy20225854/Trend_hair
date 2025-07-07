@@ -1,0 +1,41 @@
+<div class="container admin-dashboard mt-4">
+  <h2>Quản lý dịch vụ cắt tóc</h2>
+  {{#if flash}}
+    <div class="alert alert-{{flash.type}}">{{flash.message}}</div>
+  {{/if}}
+  <a href="/admin/services/create" class="btn btn-success mb-3">+ Thêm dịch vụ mới</a>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Dịch vụ</th>
+        <th>Mô tả</th>
+        <th>Thời gian</th>
+        <th>Giá (VNĐ)</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each services}}
+      <tr>
+        <td>{{inc @index}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.description}}</td>
+        <td>{{#if this.duration}}{{this.duration}}{{else}}-{{/if}}</td>
+        <td>{{this.price}}</td>
+        <td>
+          <a href="/admin/services/{{this._id}}/edit" class="btn btn-primary btn-sm">Sửa</a>
+          <form action="/admin/services/{{this._id}}/delete" method="POST" style="display:inline-block" onsubmit="return confirm('Bạn có chắc muốn xóa?');">
+            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+          </form>
+        </td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="6" class="text-center">Không có dịch vụ nào</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <a href="/admin/dashboard" class="btn btn-secondary mt-3">Quay lại Dashboard</a>
+</div> 

@@ -1,0 +1,32 @@
+<div class="container admin-dashboard mt-4">
+  <h2>Danh sách lịch hẹn</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Dịch vụ</th>
+        <th>Thời gian</th>
+        <th>Thợ cắt</th>
+        <th>Ghi chú</th>
+        <th>Ngày tạo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each appointments}}
+      <tr>
+        <td>{{inc @index}}</td>
+        <td>{{this.tenDichVu}}</td>
+        <td>{{this.thoiGianHen}}</td>
+        <td>{{this.thoCat}}</td>
+        <td>{{this.ghiChu}}</td>
+        <td>{{this.createdAt}}</td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="6" class="text-center">Không có lịch hẹn nào</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <a href="/admin/dashboard" class="btn btn-secondary mt-3">Quay lại Dashboard</a>
+</div> 

@@ -7,26 +7,30 @@
   background: #fff;
   border-bottom: 2px solid #eee;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 2rem;
 
-  .navbar-brand img {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+  .navbar-brand {
+    img {
+      border-radius: 50%;
+      height: 70px;
+      width: 70px;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
 
-    &:hover {
-      transform: rotate(5deg) scale(1.05);
+      &:hover {
+        transform: rotate(5deg) scale(1.05);
+      }
     }
   }
 
   .nav-link {
     font-weight: 500;
+    font-size: 1.1rem;
     color: #333;
-    margin: 0 0.75rem;
+    margin: 0 1rem;
     position: relative;
     transition: color 0.2s ease;
+    padding: 0.5rem 1rem;
 
     &.active,
     &:hover {
@@ -37,7 +41,7 @@
       content: '';
       display: block;
       width: 0%;
-      height: 2px;
+      height: 3px;
       background: #a5cfdc;
       transition: width 0.3s;
       position: absolute;
@@ -54,6 +58,8 @@
     border-color: #91bde7;
     color: #c0392b;
     font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
 
     &:hover {
       background-color: #92b9e9;
@@ -75,4 +81,146 @@ h2{
 }
 h5{
   font-size: 16px;
+}
+
+// Style cho trang liên hệ
+.contact-container {
+  background: #f6f8fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.contact-container h2, .contact-container h3 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+.contact-container ul {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.contact-container li {
+  margin-bottom: 0.5rem;
+}
+.contact-container a {
+  color: #8fb2c2;
+  text-decoration: underline;
+}
+.contact-container a:hover {
+  color: #c0392b;
+}
+.contact-container iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.contact-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 2rem 1.5rem;
+}
+.contact-form label {
+  font-weight: 500;
+  color: #333;
+}
+.contact-form input,
+.contact-form textarea {
+  border-radius: 6px;
+  border: 1px solid #a5cfdc;
+  background: #fafdff;
+}
+.contact-form button {
+  background: #8fb2c2;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.contact-form button:hover {
+  background: #c0392b;
+  color: #fff;
+}
+
+// Style cho dashboard admin
+.admin-dashboard {
+  background: #f6f8fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.admin-dashboard h2, .admin-dashboard h3 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+.admin-dashboard .card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+.admin-dashboard .table {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+.admin-dashboard .table th {
+  background: #8fb2c2;
+  color: #fff;
+  font-weight: 600;
+}
+.admin-dashboard .table td {
+  vertical-align: middle;
+}
+.admin-dashboard .btn-info {
+  background: #8fb2c2;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.admin-dashboard .btn-info:hover {
+  background: #c0392b;
+  color: #fff;
+}
+
+// Style cho bảng giá dịch vụ cắt tóc
+.price-list-container {
+  background: #f6f8fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.price-list-container h2 {
+  color: #2c3e50;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.price-list-table {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.price-list-table th {
+  background: #8fb2c2 !important;
+  color: #fff !important;
+  font-weight: 600;
+  text-align: center;
+}
+.price-list-table td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.05rem;
+}
+.price-list-table tr:nth-child(even) {
+  background: #f0f6fa;
+}
+.price-list-table tr:hover {
+  background: #e3f0fa;
+  transition: background 0.2s;
 }

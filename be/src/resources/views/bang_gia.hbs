@@ -1,0 +1,29 @@
+<div class="container price-list-container mt-5 mb-5">
+  <h2 class="text-center mb-4">Bảng giá dịch vụ cắt tóc</h2>
+  <table class="table table-bordered table-striped price-list-table" style="color: #222; background: #fff;">
+    <thead style="background: #8fb2c2; color: #fff;">
+      <tr>
+        <th>#</th>
+        <th>Dịch vụ</th>
+        <th>Mô tả</th>
+        <th>Thời gian</th>
+        <th>Giá (VNĐ)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each services}}
+      <tr>
+        <td>{{inc @index}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.description}}</td>
+        <td>{{#if this.duration}}{{this.duration}}{{else}}-{{/if}}</td>
+        <td>{{this.price}}</td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="5" class="text-center">Không có dữ liệu</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div> 

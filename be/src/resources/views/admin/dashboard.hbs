@@ -1,0 +1,71 @@
+<div class="container admin-dashboard mt-4">
+  <h2>Dashboard</h2>
+  
+  <div class="row mt-4">
+    <!-- Thống kê người dùng -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Người dùng</h5>
+          <p class="card-text">Tổng số: {{users.length}}</p>
+          <a href="/admin/users" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thống kê lịch hẹn -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lịch hẹn</h5>
+          <p class="card-text">Tổng số: {{appointments.length}}</p>
+          <a href="/admin/appointments" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thống kê sản phẩm -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Sản phẩm</h5>
+          <p class="card-text">Tổng số: {{products.length}}</p>
+          <a href="/products" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Danh sách lịch hẹn gần đây -->
+  <div class="mt-4">
+    <h3>Lịch hẹn gần đây</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Dịch vụ</th>
+          <th>Thời gian</th>
+          <th>Thợ cắt</th>
+          <th>Ghi chú</th>
+          <th>Người đặt</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each appointments}}
+        <tr>
+          <td>{{this.tenDichVu}}</td>
+          <td>{{this.thoiGianHen}}</td>
+          <td>{{this.thoCat}}</td>
+          <td>{{this.ghiChu}}</td>
+          <td>
+            {{#if this.userId}}
+              <a href="/admin/users/{{this.userId}}" class="btn btn-info btn-sm">Xem chi tiết</a>
+            {{else}}
+              <span class="text-muted">Ẩn danh</span>
+            {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div> 

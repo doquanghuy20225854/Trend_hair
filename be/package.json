@@ -6,7 +6,9 @@
     "beautiful": "prettier --single-quote --trailing-comma all --tab-width --write \"src/**/*.{js, json, scss}\"",
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create-admin": "node src/scripts/createAdmin.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed-services": "node src/scripts/seedServices.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +27,10 @@
   "homepage": "https://github.com/doquanghuy20225854/GR1#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.3",
+    "express-session": "^1.18.1",
     "method-override": "^3.0.0",
     "mongoose": "^8.15.0",
     "mongoose-slug-generator": "^1.0.4"

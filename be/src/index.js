@@ -25,6 +25,13 @@ app.use(session({
   cookie: { maxAge: 600000 } // 10 phút
 }));
 
+// Middleware truyền user vào res.locals
+app.use((req, res, next) => {
+  res.locals.user = req.session.user;
+  res.locals.flash = req.session.flash;
+  delete req.session.flash;
+  next();
+});
 
 // template engine
 app.engine('hbs', engine({ 
@@ -35,6 +42,9 @@ app.engine('hbs', engine({
     },
      eq: function (a, b) {
       return a === b;
+    },
+    json: function(context) {
+      return JSON.stringify(context, null, 2);
     },
   },
  }));

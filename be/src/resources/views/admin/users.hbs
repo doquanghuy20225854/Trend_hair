@@ -1,0 +1,39 @@
+<div class="container admin-dashboard mt-4">
+  <h2>Danh sách người dùng</h2>
+  {{#if flash}}
+    <div class="alert alert-{{flash.type}}">{{flash.message}}</div>
+  {{/if}}
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th>Tên đăng nhập</th>
+        <th>Phân quyền</th>
+        <th>Ngày tạo</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr>
+        <td>{{inc @index}}</td>
+        <td>{{this.fullName}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.username}}</td>
+        <td>{{this.role}}</td>
+        <td>{{this.createdAt}}</td>
+        <td>
+          <a href="/admin/users/{{this._id}}/edit" class="btn btn-primary btn-sm">Sửa</a>
+          <form action="/admin/users/{{this._id}}/delete" method="POST" style="display:inline-block" onsubmit="return confirm('Bạn có chắc muốn xóa người dùng này?');">
+            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+          </form>
+          <a href="/admin/users/{{this._id}}" class="btn btn-info btn-sm">Xem chi tiết</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <a href="/admin/dashboard" class="btn btn-secondary mt-3">Quay lại Dashboard</a>
+</div> 

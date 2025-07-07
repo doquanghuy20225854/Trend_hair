@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Logo -->
     <a class="navbar-brand" href="/">
-      <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-1/481899622_1185131896946192_5648201830565835115_n.jpg?stp=cp0_dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHFKzrI60Nr2plKj-uE6xwhAnKE8JtLGBkCcoTwm0sYGeEn9Aur9qp8X7J8qmEOF5aUKzN2h-8we1wzxiBTmEJA&_nc_ohc=4vHPZRabtNgQ7kNvwFDiWQ-&_nc_oc=Adkah2oRij8sA5AkT6rQvFeyLlb4_g5Tjiq4fdEPr2dPhDOwbxilaUi59Dj-VNP-FVX0E75anF6DSVmaf_2u3whR&_nc_zt=24&_nc_ht=scontent.fhan18-1.fna&_nc_gid=uTN38arrCZZhLL4K713Zbg&oh=00_AfKkIhPJ9-ohUZKNynuC2Zm413rUZ8IDV0EBn82FDe1DWQ&oe=683CD34E" alt="logo">
+      <img src="/img/logo.png" alt="logo">
     </a>
 
     <!-- Nút thu gọn menu trên mobile -->
@@ -18,37 +18,92 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/dat_lich/create">Đặt lịch</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/dat_lich/show">Lịch hẹn gần nhất</a>
-        </li>
+        {{#if user}}
+          {{#if (eq user.role 'admin')}}
+            <!-- Không hiển thị nút Bảng giá cho admin -->
+          {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/bang_gia">Bảng giá</a>
+            </li>
+          {{/if}}
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/bang_gia">Bảng giá</a>
+          </li>
+        {{/if}}
+        {{#if user}}
+          {{#if (eq user.role 'admin')}}
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/services">Dịch vụ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/users">Người dùng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/appointments">Lịch hẹn</a>
+            </li>
+          {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/dat_lich/create">Đặt lịch</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dat_lich/show">Lịch hẹn gần nhất</a>
+            </li>
+          {{/if}}
+        {{/if}}
         <li class="nav-item">
           <a class="nav-link" href="/products">Sản phẩm</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/lien_he">Liên hệ</a>
+          {{#if user}}
+            {{#if (eq user.role 'admin')}}
+              <!-- Không hiển thị nút Liên hệ cho admin -->
+            {{else}}
+              <a class="nav-link" href="/lien_he">Liên hệ</a>
+            {{/if}}
+          {{else}}
+            <a class="nav-link" href="/lien_he">Liên hệ</a>
+          {{/if}}
         </li>
       </ul>
 
       <!-- Menu phải (Avatar người dùng) -->
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="http://localhost:4000/img/user.jpg" alt="User"
-              class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
-            <span>Quang Huy</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/dat_lich/create">Đặt lịch</a></li>
-            <li><a class="dropdown-item" href="/me/stored/products">Lịch hẹn của tôi</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/products">Sản phẩm</a></li>
-            <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
-          </ul>
-        </li>
+        {{#if user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              {{#if user.avatar}}
+                <img src="{{user.avatar}}" alt="User"
+                  class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
+              {{else}}
+                <span class="me-2"><i class="fas fa-user-circle fa-2x"></i></span>
+              {{/if}}
+              <span>{{user.fullName}}</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              {{#if (eq user.role 'admin')}}
+                <li><a class="dropdown-item" href="/admin/dashboard">Quản lý</a></li>
+                <li><a class="dropdown-item" href="/admin/services">Dịch vụ</a></li>
+                <li><a class="dropdown-item" href="/admin/users">Người dùng</a></li>
+                <li><a class="dropdown-item" href="/admin/appointments">Lịch hẹn</a></li>
+                <li><hr class="dropdown-divider"></li>
+              {{/if}}
+              <li><a class="dropdown-item" href="/dat_lich/create">Đặt lịch</a></li>
+              <li><a class="dropdown-item" href="/me/stored/products">Lịch hẹn của tôi</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/products">Sản phẩm</a></li>
+              <li><a class="dropdown-item" href="/auth/logout">Đăng xuất</a></li>
+            </ul>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/login">Đăng nhập</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/register">Đăng ký</a>
+          </li>
+        {{/if}}
       </ul>
     </div>
   </div>
