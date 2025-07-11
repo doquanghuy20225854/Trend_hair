@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h2>Lịch sử liên hệ và phản hồi</h2>
+  {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+  {{/if}}
+  {{#if contacts.length}}
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Ngày gửi</th>
+          <th>Nội dung liên hệ</th>
+          <th>Phản hồi của admin</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each contacts}}
+        <tr>
+          <td>{{this.createdAt}}</td>
+          <td>{{this.message}}</td>
+          <td>
+            {{#if this.adminReply}}
+              <span class="text-success">{{this.adminReply}}</span>
+            {{else}}
+              <span class="text-muted">Chưa có phản hồi</span>
+            {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <div class="alert alert-info">Bạn chưa gửi liên hệ nào.</div>
+  {{/if}}
+  <a href="/lien_he" class="btn btn-secondary mt-3">Quay lại trang liên hệ</a>
+</div> 

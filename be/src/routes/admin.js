@@ -23,4 +23,9 @@ router.get('/services/:id/edit', serviceController.editForm);
 router.post('/services/:id/edit', serviceController.update);
 router.post('/services/:id/delete', serviceController.delete);
 
+// Quản lý liên hệ
+router.get('/contacts', adminController.contacts);
+router.get('/contacts/:id', adminController.contactDetail);
+router.post('/contacts/:id/reply', adminController.replyContact);
+
 module.exports = router; 

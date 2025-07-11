@@ -8,6 +8,10 @@ router.get('/lien_he', (req, res) => {
   res.render('lien_he');
 });
 
+router.post('/lien_he', siteController.submitContact);
+
+router.get('/lien_he/history', siteController.contactHistory);
+
 router.get('/bang_gia', async (req, res) => {
   const services = await Service.find().lean();
   res.render('bang_gia', { services });
