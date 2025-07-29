@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2>Quản lý sản phẩm</h2>
+  <a href="/admin/products/create" class="btn btn-success mb-3">Thêm sản phẩm</a>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Ảnh</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Trạng thái</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>
+        <td style="width:100px"><img src="{{this.img}}" alt="{{this.name}}" style="max-width:80px;max-height:80px;"></td>
+        <td>{{this.name}}</td>
+        <td>{{this.price}}</td>
+        <td>{{this.status}}</td>
+        <td>
+          <a href="/admin/products/{{this._id}}/edit" class="btn btn-warning btn-sm">Sửa</a>
+          <form action="/admin/products/{{this._id}}/delete" method="POST" style="display:inline-block" onsubmit="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">
+            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div> 

@@ -11,6 +11,11 @@
 />
 </head>
 <body>
+    {{#if flash}}
+      <div class="alert alert-{{flash.type}} text-center" style="margin: 10px auto; max-width: 500px;">
+        {{flash.message}}
+      </div>
+    {{/if}}
     <div class="app">
         {{>header}}
                 {{{body}}}
